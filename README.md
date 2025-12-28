@@ -85,3 +85,10 @@ Reduces the font file size
 3.Server Component => Data/API keys are kept secret on the server (safe for priveta keys)
 
 # If a Client Component imports another component, that imported one become a client component too, even if it doesn't have "use client".
+
+# how to create Dynamic Route Segments
+1.When you don't know the exact route segment names ahead of time and want to create routes from dynamic data, you can use Dynamic Segments that are filled in at request time or prerendered at build time.
+
+2.You can use dynamic Route Segments in Server Components.
+
+3.Dynamic Segments are passed as the params prop to layout, page, route, and generateMetadata functions.
