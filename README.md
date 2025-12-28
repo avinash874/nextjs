@@ -64,3 +64,24 @@ Instead of downloading all possible characters in every script, you specify the 
 Reduces the font file size
 14 Improves performance and loading times
 • Makes the font more focused on your audience's language
+
+# On the client (first load)
+1.client component ke ander kabhi bhi async function nhi bana sakte
+
+2.Has "use client" at the top => Client Component
+
+3.Client Components and the RSC Payload are used to pre-render HTML.
+
+4.Client Component => Data/API keys are visible in the browser(use only public) 
+
+# On the server
+1.Server Components are rendered into a special data format called the React Server Component Payload (RSC Payload).
+
+2.Fetch data from databases or APIs close to the source.
+@.Use API keys, tokens, and other secrets without exposing them to the client.
+@.Reduce the amount of JavaScript sent to the browser.
+@.Improve the First Contentful Paint (FCP), and stream content progressively to the client.
+
+3.Server Component => Data/API keys are kept secret on the server (safe for priveta keys)
+
+# If a Client Component imports another component, that imported one become a client component too, even if it doesn't have "use client".

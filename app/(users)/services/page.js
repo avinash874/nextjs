@@ -2,6 +2,13 @@ import Image from "next/image";
 import style from "./service.module.css";
 // import thapa from "/public/thapa.jpg"
 
+export const metadata = {
+  title: "Services Page",
+  description: "This is services page description",
+  authors:[{ name: "Avinash Singh" }, { name: "thapa technichal"}, { url: "thapatechnichal.com"}],
+  keywords: ["nextjs","reactjs","fullstack"]
+};
+
 const page = () => {
   return (
     <>

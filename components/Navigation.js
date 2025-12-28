@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-      <header className="grid grid-cols-2 font-work">
+      <header className="grid grid-cols-3 font-work">
         <div>Avinash logo</div>
         <nav>
             <ul className="flex gap-6">
@@ -11,6 +11,12 @@ const Home = () => {
                 </li>
                 <li>
                     <Link href="/about">about</Link>
+                </li>
+                <li>
+                    <Link href="/clientcomp">Clientcomp</Link>
+                </li>
+                <li>
+                    <Link href="/servercomp">ServerComp</Link>
                 </li>
                 <li>
                     <Link href="/contact">contact</Link>
