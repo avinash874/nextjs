@@ -92,3 +92,21 @@ Reduces the font file size
 2.You can use dynamic Route Segments in Server Components.
 
 3.Dynamic Segments are passed as the params prop to layout, page, route, and generateMetadata functions.
+
+# 🔥 Dynamic Route in Client Component
+1.use is a react API that lets you read the value of resourse like a Promise or context.
+
+# What are SearchParams?
+
+11.useSearchParams is a Next.js App Router hook used to read URL query parameters like ?page=2&sort=asc
+
+12.useSearchParams is a Next.js client hook used to read query parameters from the URL in App Router, similar to URLSearchParams but reactive.
+
+1.In Next.js (especially in App  Router), searchParams is an  optional prop you can access in  server components or via loader  functions to read query parameters  directly from the URL. It's  extremely useful for building  features like filtering, sorting,  and pagination - all of which are  essential in e-commerce (ecom)  websites.
+ It refers to the query string  parameters in the URL - like this:
+
+2.useSearchParams is a Client Component hook and is not supported in Server Components to prevent stale values during partial rendering.
+
+3.If you want to fetch data in a Server Component based on search params, it's often a better option to read the searchParams prop of the corresponding Page. You can then pass it down by props to any component (Server or Client) within that Page.
+
+4.If an application includes the /pages directory, useSearchParams will return ReadonlyURLSearchParams | null. The null value is for compatibility during migration since search params cannot be known during pre-rendering of a page that doesn't use getServerSideProps
