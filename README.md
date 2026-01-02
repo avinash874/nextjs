@@ -167,3 +167,10 @@ Streaming data with the {use} hook
 
 You can {use} React's use hook to stream data from the server to client. Start by fetching data in your Server component, and pass the promise to your Client Component as prop:
 
+
+# Next.js Auto Loading Animation with loading.jsx | Show Spinner Without Any Code!
+
+* just by creating a loading.jsx file! No need to write extra useState or spinner logic
+
+* The special file loading.js helps you create meaningful Loading UI with React Suspense. With this convention, you can show an instant loading state from the server while the content of a route segment streams in. The new content is automatically swapped in once complete.
+

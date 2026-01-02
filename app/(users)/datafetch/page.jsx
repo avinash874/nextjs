@@ -1,9 +1,5 @@
-const DataFetch = () => {
-    
-  return (
-    <>
-      <h1>data Fetching</h1>
-    </>
-  )
-}
-export default DataFetch
+const DataFetch = async () => {
+  return <h1>Data Fetching</h1>;
+};
+
+export default DataFetch;
