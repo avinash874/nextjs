@@ -158,3 +158,12 @@ To fetch data with the {fetch} API, turn your component into an asynchronous fun
 
 # api: https://api.genderize.io/?name=${userName}
 
+# How to Fetch Data in Next.js Client Component🔥
+
+* React's use hook
+* A community library like  {SWR}or {React Query}
+
+Streaming data with the {use} hook
+
+You can {use} React's use hook to stream data from the server to client. Start by fetching data in your Server component, and pass the promise to your Client Component as prop:
+
