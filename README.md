@@ -155,6 +155,7 @@ You can fetch data in Server Components using any asynchronous I/O, such as:
 * With the fetch API
 
 To fetch data with the {fetch} API, turn your component into an asynchronous function, and await the {fetch} call. For example:
+* localhost link: http://localhost:3000/datafetch/servercomp?name=kiran
 
 # api: https://api.genderize.io/?name=${userName}
 
@@ -180,3 +181,12 @@ You can {use} React's use hook to stream data from the server to client. Start b
 Link: http://localhost:3000/projects/jokes
 use this Link : https://official-joke-api.appspot.com/random_joke
 
+
+# Suspense in Next.js: Load Async Part Only — Rest of UI Loads Immediately!
+
+<Suspense> lets you display a fallback until its children have finished loading.
+
+For example:
+* Show a loading spinner for just part of the page
+* Fetch server-side data inside a component (server component)
+* Make your Ul feel more responsive without waiting for everything
