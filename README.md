@@ -174,3 +174,9 @@ You can {use} React's use hook to stream data from the server to client. Start b
 
 * The special file loading.js helps you create meaningful Loading UI with React Suspense. With this convention, you can show an instant loading state from the server while the content of a route segment streams in. The new content is automatically swapped in once complete.
 
+
+# Build a Random Jokes Generator App in Next.js with API & Tailwind CSS
+
+Link: http://localhost:3000/projects/jokes
+use this Link : https://official-joke-api.appspot.com/random_joke
+
