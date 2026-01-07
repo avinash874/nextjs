@@ -40,10 +40,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # What is Layout File?
 In Next.js App Router, the layout.js (or layout.tsx) file is a special file used to wrap pages and components with a shared structure-such as headers, footers, or navigation bars. It plays a critical role in creating consistent layouts across different routes of your app.
 
- # App folder ke ander agar koi folder bhi create karte hai to wo run nhi karega aur uske ander bhi koi file bhi create kiye jko tabhi run nhi karega 
- # name of the file ko proper name likho page.js,page.jsx
+ * App folder ke ander agar koi folder bhi create karte hai to wo run nhi karega aur uske ander bhi koi file bhi create kiye jko tabhi run nhi karega 
+ * name of the file ko proper name likho page.js,page.jsx
 
- # Correct route file (page.js) => File name must be exactly page.js (case-sensitive)
+ * Correct route file (page.js) => File name must be exactly page.js (case-sensitive)
 
  # ham <Link> ka use karte hai insteast of anchor tag <a> jab pure page ko refresh nhi karna ho jab click karne par.
 
@@ -190,3 +190,123 @@ For example:
 * Show a loading spinner for just part of the page
 * Fetch server-side data inside a component (server component)
 * Make your Ul feel more responsive without waiting for everything
+
+# Connect Next.js with MySQL🔥
+
+* Install mysql2 in terminal: npm i mysql2
+
+* work on workbench: data should like that:
+  <!-- working schema -->
+  create database hospital_db;
+   use hospital_db;
+
+   CREATE TABLE doctors (
+    doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    specialization VARCHAR(100),
+    phone VARCHAR(15),
+    experience INT
+);
+
+INSERT INTO doctors (name, specialization, phone, experience) VALUES 
+('Dr. Amit Kumar', 'Cardiologist', '9001112201', 10),
+('Dr. Neha Jain', 'Dermatologist', '9001112202', 7),
+('Dr. Suresh Rao', 'Orthopedic', '9001112203', 12),
+('Dr. Rahul Mehta', 'Neurologist', '9001112204', 15),
+('Dr. Pooja Sharma', 'Gynecologist', '9001112205', 9),
+('Dr. Anil Verma', 'General Physician', '9001112206', 8),
+('Dr. Kavita Singh', 'Pediatrician', '9001112207', 6),
+('Dr. Ramesh Patel', 'Cardiologist', '9001112208', 14),
+('Dr. Sunita Iyer', 'ENT Specialist', '9001112209', 11),
+('Dr. Mohit Agarwal', 'Urologist', '9001112210', 13),
+
+('Dr. Nisha Kapoor', 'Psychiatrist', '9001112211', 10),
+('Dr. Arjun Malhotra', 'Orthopedic', '9001112212', 7),
+('Dr. Seema Joshi', 'Dermatologist', '9001112213', 9),
+('Dr. Vikram Singh', 'General Surgeon', '9001112214', 16),
+('Dr. Alok Mishra', 'Neurologist', '9001112215', 12),
+('Dr. Priya Nair', 'Gynecologist', '9001112216', 8),
+('Dr. Deepak Chauhan', 'Pulmonologist', '9001112217', 14),
+('Dr. Sneha Kulkarni', 'Pediatrician', '9001112218', 6),
+('Dr. Karan Shah', 'Oncologist', '9001112219', 18),
+('Dr. Meenal Deshpande', 'Radiologist', '9001112220', 11),
+
+('Dr. Harish Gupta', 'Nephrologist', '9001112221', 13),
+('Dr. Ritu Saxena', 'Endocrinologist', '9001112222', 9),
+('Dr. Ajay Yadav', 'General Physician', '9001112223', 7),
+('Dr. Ananya Roy', 'Psychiatrist', '9001112224', 10),
+('Dr. Sanjay Khanna', 'Orthopedic', '9001112225', 15),
+('Dr. Pallavi Ghosh', 'ENT Specialist', '9001112226', 8),
+('Dr. Nitin Bansal', 'Cardiologist', '9001112227', 17),
+('Dr. Shweta Arora', 'Dermatologist', '9001112228', 6),
+('Dr. Manish Tiwari', 'Urologist', '9001112229', 12),
+('Dr. Radhika Menon', 'Gynecologist', '9001112230', 14),
+
+('Dr. Ashok Rawat', 'General Surgeon', '9001112231', 20),
+('Dr. Pankaj Soni', 'Pulmonologist', '9001112232', 9),
+('Dr. Isha Banerja', 'Pediatrician', '9001112233', 5),
+('Dr. Lokesh Mathur', 'Radiologist', '9001112234', 11),
+('Dr. Farhan Ali', 'Neurologist', '9001112235', 16),
+('Dr. Reema Chatterjee', 'Endocrinologist', '9001112236', 10),
+('Dr. Prakash Kulkarni', 'Nephrologist', '9001112237', 14),
+('Dr. Aditi Verma', 'Psychiatrist', '9001112238', 7),
+('Dr. Sameer Khan', 'Oncologist', '9001112239', 19),
+('Dr. Juhi Bhatia', 'ENT Specialist', '9001112240', 8),
+
+('Dr. Vinod Pillai', 'General Physician', '9001112241', 12),
+('Dr. Tanya Oberoi', 'Dermatologist', '9001112242', 9),
+('Dr. Rohan Sen', 'Orthopedic', '9001112243', 11),
+('Dr. Bhavesh Joshi', 'Cardiologist', '9001112244', 18),
+('Dr. Namita Kulkarni', 'Gynecologist', '9001112245', 13),
+('Dr. Saurabh Dubey', 'Pulmonologist', '9001112246', 10),
+('Dr. Kirti Malhotra', 'Radiologist', '9001112247', 8),
+('Dr. Aditya Saxena', 'Urologist', '9001112248', 14),
+('Dr. Megha Reddy', 'Pediatrician', '9001112249', 6),
+('Dr. Rajiv Mallick', 'General Surgeon', '9001112250', 17);
+
+select * from doctors
+
+* make file db.js inside config and also make file static
+
+<!-- db.js -->
+import mysql from "mysql2/promise";
+
+export const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "Avinash#2004",
+    database: "hospital_db",
+});
+
+try {
+const connection = await db.getConnection();
+console.log("Database connection successfully.")
+connection.release();
+} catch(err){
+    console.error("Database connection failed:", err);
+    process.exist(1);
+}
+
+<!-- static/page.jsx -->
+
+import React from 'react'
+import {db} from "../../../consfig/db"
+
+const StaticPage = async () => {
+    const [doctors] = await db.execute("select * from doctors");
+    console.log(doctors);
+
+  return (
+  <>
+    <ul>
+      {doctors.map((doctor) => (
+        <li key={doctor.doctor_id}>{doctor.name}</li>
+      ))}
+    </ul>
+  </>
+);
+}
+
+export default StaticPage
+
+
