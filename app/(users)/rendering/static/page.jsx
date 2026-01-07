@@ -1,8 +1,7 @@
 import React from 'react'
 import db from "@/config/db";
 
-export const dynamic = "force-static";
-
+export const revalidate = 30; // Revalidate every 60 seconds
 
 const StaticPage = async () => {
     const [doctors] = await db.execute("select * from doctors");
