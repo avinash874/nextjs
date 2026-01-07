@@ -1,9 +1,12 @@
 import React from 'react'
-import db from "@/config/db"
+import db from "@/config/db";
+
+export const dynamic = "force-static";
+
 
 const StaticPage = async () => {
     const [doctors] = await db.execute("select * from doctors");
-    console.log(doctors);
+    console.log("Static doctors");
 
   return (
   <>

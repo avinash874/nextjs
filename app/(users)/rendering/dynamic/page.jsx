@@ -1,9 +1,14 @@
 import React from 'react'
-import db from "@/config/db"
+import db from "@/config/db";
 
-const StaticPage = async () => {
+export const dynamic = "force-dynamic";
+
+
+const DynamicPage = async () => {
     const [doctors] = await db.execute("select * from doctors");
-    console.log(doctors);
+    console.log("Dynamic doctors");
+
+    
 
   return (
   <>
@@ -16,4 +21,4 @@ const StaticPage = async () => {
 );
 }
 
-export default StaticPage
+export default DynamicPage

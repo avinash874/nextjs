@@ -264,3 +264,29 @@ For example:
 * export default StaticPage
 
 
+# Static Route (Default Behavior)
+“Static pages are pre-rendered at build time for performance, while dynamic pages are rendered per request to serve real-time or user-specific data.”
+
+* In Next.js, all routes are static by default.
+For example:
+*Page is generated once during npm run build.
+* Doesn't change based on user or request data.
+* Loads super fast and can be cached by CDNs.
+
+# Dynamic Route
+A route becomes dynamic when it depends on data that can change between requests, like:
+For example:
+• searchParams (e.g. ?user=thapa)
+• headers function
+• cookies function
+• useSearchParams() or usePathname()
+• fetch0 with cache: 'no-store' or next: {revalidate: 0 }
+• Or when you manually mark a page as dynamic:
+export const dynamic = force-dynamic';
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+* for produvtion
+* npm run build
+* npm run start

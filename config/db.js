@@ -5,7 +5,7 @@ import mysql from "mysql2/promise";
 // mysql.createconnection()
 
 // For multiple connection create reusable connection
-export const db = mysql.createPool({
+ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "Avinash#2004",
@@ -21,3 +21,4 @@ connection.release();
     process.exist(1);
 }
 
+export default db;
