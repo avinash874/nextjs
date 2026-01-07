@@ -225,7 +225,7 @@ For example:
 <!-- db.js -->
 * import mysql from "mysql2/promise";
 
-* export const db = mysql.createPool({
+* <export const db = mysql.createPool({
   *   host: "localhost",
   *   user: "root",
   *   password: "Avinash#2004",
@@ -239,14 +239,14 @@ For example:
 * } catch(err){
  *    console.error("Database connection * failed:", err);
  *    process.exist(1);
-* }
+* }>
 
 <!-- static/page.jsx -->
 
 * import React from 'react'
 * import {db} from "../../../consfig/db"
 
-* const StaticPage = async () => {
+* <<const StaticPage = async () => {
   *   const [doctors] = await db.execute* ("select * from doctors");
   *   console.log(doctors);
 
@@ -259,7 +259,7 @@ For example:
    *  </ul>
  *  </>
 * );
-* }
+* }>
 
 * export default StaticPage
 
