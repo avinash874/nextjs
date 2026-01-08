@@ -332,3 +332,38 @@ What the user sees:
 * Next user ko updated page milta hai
 * ⚠️ Pehla user ko purana page mil sakta hai
 * ⚠️ Next user ko updated page milta hai
+
+# Ract Cache in Next.js very important
+
+* cache() is a function introduced in React 18+ that allows you to memoize (store the result of) a function based on its arguments so it doesn't run again if called with the same arguments.
+
+* This is particularly useful on the server to avoid repeated data fetching for the same input, especially during SSR or RSC rendering.
+
+* cache() works only in server components or in server environments like Next.js
+app router.
+
+# 🔹 What problem does React Cache solve?
+
+* When multiple components request the same data (e.g., a DB query), React Cache ensures:
+
+* The function runs once
+* The result is reused
+* Performance improves
+* No redundant API/DB calls
+
+# 🔹 How it works (simple idea)
+React Cache:
+* Caches function results by arguments
+* Works on the server
+* Automatically deduplicates calls during rendering
+
+# React's cache() fetches data on first call and reuses it from memory for the same arguments on subsequent server calls.
+
+# 🔹 React Cache + Database Example (Real use case)
+
+* import { cache } from "react";
+* import db from "@/lib/db";
+* export const getUserById = cache(async (id: string) => {
+ *  return db.user.findUnique({ where: { id } });
+* });
+
