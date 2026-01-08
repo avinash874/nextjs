@@ -367,3 +367,18 @@ React Cache:
  *  return db.user.findUnique({ where: { id } });
 * });
 
+# Custom Errors
+# Fix 404 Route Errors with notFound() in Next.js
+
+* In Next.js App Router, the correct way to show a 404 page for missing data or invalid routes is using notFound() from next/navigation.
+
+* “In Next.js App Router, notFound() throws a special error that renders the nearest not-found.jsx and returns a 404 HTTP status.”
+
+# 🔥 Best practices
+
+* Always validate params
+* Always check DB results
+* Use route-level not-found.jsx
+* Never use notFound() in client components
+
+

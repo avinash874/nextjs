@@ -24,7 +24,7 @@ export default DynamicPage
         <>
             <ul>
                 {doctors.map((doctor) => {
-                    return <li key={doctor.doctor_id}>{doctor.name}</li>
+                    return <li key={doctor.doctor_id}>{doctor.first_name}</li>
                 })}
             </ul>
         </>

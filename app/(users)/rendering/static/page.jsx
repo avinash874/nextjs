@@ -11,7 +11,7 @@ const StaticPage = async () => {
   <>
     <ul>
       {doctors.map((doctor) => (
-        <li key={doctor.doctor_id}>{doctor.name}</li>
+        <li key={doctor.doctor_id}>{doctor.first_name}</li>
       ))}
     </ul>
   </>

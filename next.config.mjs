@@ -4,4 +4,8 @@ const nextConfig = {
   reactCompiler: true,
 };
 
+// module.exports = {
+//   outputFileTracingRoot: __dirname,
+// }
+
 export default nextConfig;
