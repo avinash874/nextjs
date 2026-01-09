@@ -13,7 +13,7 @@ export const contactAction = async (fullName, email, message) => {
       [fullName, email, message]
     );
     return { success: true, message: "form submitted successfully" };
-    // redirect("/");
+    redirect("/");
   } catch (error) {
     if (error.message === "NEXT_REDIRECT") throw error;
     return { success: false, message: "error while submitting" };

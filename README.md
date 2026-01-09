@@ -399,5 +399,46 @@ During next build, generateStaticParams runs before the corresponding Layouts or
 
 * Prepared statements are very useful against SQL injections.(?,?,?)
 
+* 'use server' is for use with using React Server Components.
+
+* 'use server' marks server-side functions that can be called from client-side code.
+
+# Reference
+'use server'
+* Security considerations
+* Serializable arguments and return values
+
+* Add 'use server' at the top of an async function body to mark the function as callable by the client. We call these functions Server Functions.
+
+<async function addToCart(data) {
+  'use server';
+  // ...
+} >
+
+ Usage
+* Server Functions in forms
+* Calling a Server Function outside of <form>
+
+
+# 34 Form Actions in next.js
+“Form Actions in Next.js let forms submit directly to Server Actions without APIs, providing built-in loading state, validation, and progressive enhancement.”
+
+* client component me meta data ko nhi likh sakte
+
+ *const contactAction = (formData) => {
+  *   const {fullName, email, message} = Object. fromEntries(formData.entries());
+  *   console.log(fullName, email, message);
+* }; 
+
+# useActionState🔥Show Loading + Handle Form Response Easily in Next.js
+
+useActionState is a Hook that allows you to update state based on the result of a form action.
+
+<const [state,formAction, isPending] = useActionState(fn,initialState, permalink?);>
+
+* In earlier React Canary versions, this API was part of React DOM and called useFormState.
+
+* Reference 
+<useActionState(action, initialState, permalink?)>
 
 
