@@ -382,3 +382,22 @@ React Cache:
 * Never use notFound() in client components
 
 
+# generateStaticParams in Next.js
+
+* The generateStaticParams function can be used in combination with dynamic route segments to statically generate routes at build time instead of on-demand at request time.
+
+* You can use the dynamicParams segment config option to control what happens when a dynamic segment is visited that was not generated with generateStaticParams.
+* You must return an empty array from generateStaticParams or utilize export const dynamic = 'force-static' in order to revalidate (ISR) paths at runtime.
+* During next dev, generateStaticParams will be called when you navigate to a route.
+During next build, generateStaticParams runs before the corresponding Layouts or Pages are generated.
+* During revalidation (ISR), generateStaticParams will not be called again.
+* generateStaticParams replaces the getStaticPaths function in the Pages Router.
+
+# Next.js Server Actions🔥Insert Contact Form Data into MySQL
+
+* fromEntries(formData.entries()) => nested array ko plane javascript pe convert kar deta hai
+
+* Prepared statements are very useful against SQL injections.(?,?,?)
+
+
+
