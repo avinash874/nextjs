@@ -4,6 +4,7 @@ import { useActionState, useState, useTransition } from "react";
 import { contactAction } from "./contact.action";
 import { useFormStatus } from "react-dom";
 import { Loader } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // import { contactAction } from "./contact.action";
 
@@ -11,12 +12,16 @@ const Contact = () => {
   // const [state, formAction, isPending] = useActionState(contactAction, null);
   const [isPending, startTransition] = useTransition();
   const [contactFormResponse, setContactFormResponse] = useState(null);
+  const Router = useRouter();
 
   const handleContactSubmit = (formData) => {
     const { fullName, email, message } = Object.fromEntries(formData);
     startTransition(async () => {
       const res = await contactAction(fullName, email, message);
       setContactFormResponse(res);
+      if (res.success) {
+        Router.push("/");   // ✅ correct client redirect
+      }
     });
   };
 

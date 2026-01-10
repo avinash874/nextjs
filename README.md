@@ -489,3 +489,28 @@ useActionState is a Hook that allows you to update state based on the result of 
 
 * If you'd like to redirect before the render process, use (next.config.js) or Middleware.
 
+# useRouter Hook in Next.js
+
+useRouter hook for client-side redirects
+How server components handle redirection in Next.js
+* Difference between next/router and next/navigation
+
+* The useRouter hook allows you to programmatically change routes in side <Client Components.> 
+
+If you want to access the router object inside any function component in your app, you can use the useRouter hook.
+
+ we can use two route in this?
+ * next/Router
+ * next/navigation
+
+ * Use next/outer if you're using Page Router,
+ * Otherwise next/navigation if you're using App Router.
+
+ * useRouter is a React Hook, meaning it cannot be used with classes. You can either use withRouter or wrap your class in a function component.
+
+ import { useRouter } from 'next/router'
+ const router = useRouter()
+ router.push("/contact");
+
+
+

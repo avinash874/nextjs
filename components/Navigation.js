@@ -13,6 +13,9 @@ const Home = () => {
                     <Link href="/about">about</Link>
                 </li>
                 <li>
+                    <Link href="/signup">signup</Link>
+                </li>
+                <li>
                     <Link href="/clientcomp">Clientcomp</Link>
                 </li>
                 <li>
