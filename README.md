@@ -441,4 +441,51 @@ useActionState is a Hook that allows you to update state based on the result of 
 * Reference 
 <useActionState(action, initialState, permalink?)>
 
+# React DOM useFormStatus Hook🔥Show Loading State on Submit Button 
+* useFormStatus hook from React DOM, built specifically for forms using Server Actions in Next.js 14. You’ll learn how to control form buttons during submission, show real-time loading states, and improve your form UX instantly.
+
+* useFormStatus is a Hook that gives you status information of the last form submission.
+ * const { pending, data, method, action } = useFormStatus();
+
+ * useFormStatus does not take any parameters.
+
+ A status object with the following properties:
+
+* pending: A boolean. If true, this means the parent <form> is pending submission. Otherwise, false.
+
+* data: An object implementing the FormData interface that contains the data the parent <form> is submitting. If there is no active submission or no parent <form>, it will be null.
+
+* method: A string value of either 'get' or 'post'. This represents whether the parent <form> is submitting with either a GET or POST HTTP method. By default, a <form> will use the GET method and can be specified by the method property.
+
+* * action: A reference to the function passed to the action prop on the parent <form>. If there is no parent <form>, the property is null. If there is a URI value provided to the action prop, or no action prop specified, status.action will be null.
+
+
+# Next.js redirect() Explained🔥(App Router)
+
+* In Next.js App Router, redirect() is the official way to send users to another route from the server. It immediately stops rendering and returns an HTTP redirect response.
+
+* redirect() is a server-only helper from next/navigation that:
+    * Ends the current request
+    * Sends a 307/308 redirect response
+    * Navigates the user to another URL
+
+* import { redirect } from "next/navigation";
+
+<!-- ////////////////// -->
+ * redirect() function from next/navigation in the Next.js App Router. We’ll cover when and how to use it inside Server Actions, what common errors you might face, and how to fix them effectively—especially when using try-catch blocks.
+
+
+* ⚠️ Stop misusing client-side redirection like router.push()—use the powerful server-side redirect() instead for secure, fast, and cleaner navigation.
+* Whether you're working with form submissions, page loaders, or server logic — this is a must-know feature for all Next.js 14+ developers.
+* BONUS: Learn why redirect() must not be used inside try-catch, and what’s the correct approach.
+
+# Behavior
+* In Server Actions and Route Handlers, redirect should be called outside the <try> block when using <try/catch> statements.
+
+* If you prefer to retur a 308 (Permanent) HTTP redirect instead of 307 (Temporary), you can use the <permanentRedirect function> instead.
+* redirect throws an error so it should be called outside the try block when using try/catch statements.
+* redirect can be called in Client Components during the rendering process but not in event handlers. You can use the useRouter hook instead.
+* redirect also accepts absolute URLs and can be used to redirect to external links.
+
+* If you'd like to redirect before the render process, use (next.config.js) or Middleware.
 
