@@ -512,5 +512,15 @@ If you want to access the router object inside any function component in your ap
  const router = useRouter()
  router.push("/contact");
 
+ # 🔙 Go Back Button in Next.js using useRouter
+
+<!-- // Import useRouter for navigation  -->
+ * import { useRouter } from "next/navigation"; 
+ <!-- // Initialize the router -->
+ * const router = useRouter(); 
+ <!-- // Navigate back to the previous page
+ -->
+* onClick={() => router.back()}  
+
 
 
