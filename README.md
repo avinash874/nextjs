@@ -522,5 +522,81 @@ If you want to access the router object inside any function component in your ap
  -->
 * onClick={() => router.back()}  
 
+# 40.Handling Server Actions in Next.js with useTransition
 
+* useTransition is a React Hook that lets you render a part of the UI in the background.
 
+* import { useTransition } from 'react';
+* const [isPending, startTransition] = useTransition()
+
+* "The code inside here is not urgent-do it in the background if needed,so the UI stay responsive."
+* useTransition does not take any parameters.
+* useTransition returns an array with exactly two items:
+
+* 1.The isPending flag that tells you whether there is a pending Transition.
+* 2.The startTransition function that lets you mark updates as a Transition.
+
+* Functions called in startTransition are called “Actions”. 
+* The function passed to startTransition is called an “Action”. By convention, any callback called inside startTransition (such as a callback prop) should be named action or include the “Action” suffix:
+
+* if we get the dada from form then use: Obeject.formentries(formData);
+
+* * Want	               Use
+* Server redirect	   redirect() in Server Action
+* Client redirect	  router.push()
+* Form with loader	  useFormState()
+* Client submit	      useTransition()
+
+# 41.revalidatePath in Next.js (App Router)
+
+* <revalidatePath> can be called in Server Functions and Route Handlers.
+
+* <revalidatePath> cannot be called in Client Components or Proxy, as it only works in server environments.
+
+* revalidatePath() is a cache invalidation helper that lets you refresh static/ISR pages on demand after a mutation (create/update/delete).
+
+Think: “I changed data — now refresh this page.”
+
+# What problem does it solve?
+
+When you use:
+* SSG / ISR
+* fetch caching
+* React cache
+
+Next.js serves cached HTML.
+
+* After a mutation (e.g., creating a doctor), the page won’t update until the next revalidation window — unless you call revalidatePath().
+
+Where can you use it?
+   * Server Actions
+   * Route Handlers
+   * Server Components
+   * ❌ Not in Client Components
+
+* import { revalidatePath } from "next/cache";
+  
+
+# Good to know:
+* Server Functions: Updates the UI immediately (if viewing the affected path). Currently, it also causes all previously visited pages to refresh when navigated to again. This behavior is temporary and will be updated in the future to apply only to the specific path.
+
+* Route Handlers: Marks the path for revalidation. The revalidation is done on the next visit to the specified path. This means calling revalidatePath with a dynamic route segment will not immediately trigger many revalidations at once. The invalidation only happens when the path is next visited.
+ 
+ //////////////////////
+ 
+* await db.execute(
+  `INSERT INTO hospital (name, city, state, department, established_year)
+   VALUES (?, ?, ?, ?, ?)`,
+  [name, city, state, department, established_year]
+);
+
+* [name, city, state, department, established_year]
+
+ * Above line statement we use (?,?,?,?) means
+ 
+ * “We use ? placeholders to prevent SQL injection and safely pass user data into queries.”
+
+ * ✅ What problem does this solve?
+     1️⃣ Prevents SQL Injection (Security)
+     2️⃣ Automatically escapes data
+     3️⃣ Improves performance
