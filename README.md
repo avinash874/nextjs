@@ -637,10 +637,4 @@ for client side
 ```js
 "use client";
 import { useRouter } from "next/navigation";
-
-```txt
-app/
- ├─ page.jsx
- ├─ layout.jsx
- └─ contact/
-     └─ page.jsx
+```
