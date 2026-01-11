@@ -35,6 +35,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+# Installation next.js
+```js
+npm create-next-app@latest
+```
 # rafce (MOST COMMON) key 
 
 # What is Layout File?
@@ -613,8 +617,9 @@ Where can you use it?
   [name, city, state, department, established_year]
 );
 ```
+```js
 * [name, city, state, department, established_year]
-
+```
  * Above line statement we use (?,?,?,?) means
  
  * “We use ? placeholders to prevent SQL injection and safely pass user data into queries.”
@@ -636,15 +641,16 @@ Think: navigate without page reload
 * seRouter() for client navigation
 
 for client side
+```js
   * import { useRouter } from "next/navigation";
     * const router = useRouter();
     * router.refresh();
-
+```
 for client side
-
+```js
   * import { revalidatePath } from "next/cache";
    * revalidatePath("/hospitals");    
-
+```
 ```js
 "use client";
 import { useRouter } from "next/navigation";
@@ -724,9 +730,9 @@ export default function Box() {
 # useRef
 useRef React ka ek special hook hai jo mostly 3 kaamon ke liye use hota hai:
 
-👉 DOM element ko directly access karne ke liye
-👉 Value store karne ke liye bina re-render ke
-👉 Previous value ya timer store karne ke liye
+* 👉 DOM element ko directly access karne ke liye
+* 👉 Value store karne ke liye bina re-render ke
+* 👉 Previous value ya timer store karne ke liye
 
 * useRef ek box jaisa hota hai jisme hum koi bhi value rakh sakte hain —
 * aur jab value change hoti hai, component re-render nahi hota.
@@ -778,3 +784,61 @@ useEffect(() => {
 }, [count]);
 
 ```
+
+# SHADCN UI in Next.js 
+* shadcn/ui ek modern UI component system hai jo Tailwind CSS ke upar bana hai.
+* Isme ready-made, fully customizable components milte hain — bina heavy UI library install kiye.
+
+* It’s not a component library. It’s copy-paste components into your project.
+
+
+“shadcn/ui is a customizable component system built on Tailwind and Radix for Next.js apps.”
+
+* Shaden Ul is not a traditional installable library or framework like Material Ul or Bootstrap. Instead, it is a unique approach to Ul development that provides a collection of beautifully designed, accessible React components-and a code distribution platform-that lets you copy the source code for individual components directly into your own project, rather than importing from an npm package.
+
+You can create a components.json file in your project by running the following command:
+
+# 1️⃣ Setup in Next.js
+Step 1 — Install Tailwind (if not installed)
+```js
+npx create-next-app@latest my-app --tailwind
+cd my-app
+```
+# Step 2 — Initialize shadcn
+```js
+npx shadcn@latest init
+```
+# Step 3 — Add components
+```js
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add dialog
+
+```
+# 2️⃣ Using shadcn Components
+* Button
+```js
+import { Button } from "@/components/ui/button";
+
+<Button>Click Me</Button>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Modal in Next.js & React🔥Create a Dialog Component with Shadcn UI
