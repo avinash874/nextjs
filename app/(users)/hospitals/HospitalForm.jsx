@@ -1,14 +1,14 @@
 "use client";
 
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Corrected import path as client component
 import { createHospitalAction } from "./hospital.action";
 
 export const HospitalForm = () => {
-  // const router = useRouter();
+  const router = useRouter();  // Corrected usage as client component
   const handleCreateHospital = async (formData) => {
     const data = Object.fromEntries(formData);
     await createHospitalAction(data);
-    // router.refresh();
+    router.refresh(); // Corrected usage for refreshing the page as client component
   };
 
   return (

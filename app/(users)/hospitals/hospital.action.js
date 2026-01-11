@@ -14,7 +14,7 @@ export const createHospitalAction = async (data) => {
       [name, city, state, department, established_year]
     );
 
-    revalidatePath("/hospitals");
+    // revalidatePath("/hospitals");
 
     return { success: true, message: "Hospital data submitted successfully" };
   } catch (error) {
