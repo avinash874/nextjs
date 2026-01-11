@@ -667,6 +667,8 @@ export async function createPost(){
 
 * Framer Motion is a powerful animation library for React that makes it easy to create smooth, modern UI animations.
 
+* Motion for React is a React animation library for building smooth, production-grade UI animations. You can start with simple prop-based animations before growing to layout, gesture and scroll animations.
+
 Used by:
     * Startups
     * SaaS dashboards
@@ -676,3 +678,103 @@ Used by:
 ```js
  npm install motion   
  ```
+Features can now be imported via "motion/react":
+```js
+import { motion } from "motion/react"
+```
+
+# 🔥 GSAP Animations in Next.js & ReactJS 🚀
+
+* GSAP works only in client components, so in Next.js make sure to add "use client" at the very top of your file.
+
+* GSAP ek powerful JavaScript animation library hai jo web pages par super smooth animations banane ke kaam aati hai.
+
+* GSAP is a high-performance JavaScript animation library used for creating smooth, complex web animations.”
+
+Use hoti hai:
+   * Landing pages
+   * Scroll animations
+   * Hero section effects
+   * Text animations
+   * SVG animations
+
+Big companies use karti hain:
+👉 Google, Apple, Nike, Adobe
+
+# ⚛️ GSAP in React
+
+```js
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+export default function Box() {
+  const boxRef = useRef();
+
+  useEffect(() => {
+    gsap.from(boxRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1
+    });
+  }, []);
+
+  return <div ref={boxRef} className="box"></div>;
+}
+```
+# useRef
+useRef React ka ek special hook hai jo mostly 3 kaamon ke liye use hota hai:
+
+👉 DOM element ko directly access karne ke liye
+👉 Value store karne ke liye bina re-render ke
+👉 Previous value ya timer store karne ke liye
+
+* useRef ek box jaisa hota hai jisme hum koi bhi value rakh sakte hain —
+* aur jab value change hoti hai, component re-render nahi hota.
+
+```js
+const myRef = useRef(initialValue);
+```
+
+# 1️⃣ DOM Element ko access karne ke liye
+Jaise agar hume input pe focus karna ho:
+```js
+import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef();
+
+  const focusInput = () => {
+    inputRef.current.focus();   // direct DOM access
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={focusInput}>Focus</button>
+    </>
+  );
+}
+
+```
+# 2️⃣ Value store karna bina re-render ke
+
+```js
+const countRef = useRef(0);
+
+function increment() {
+  countRef.current++;
+  console.log(countRef.current); // update but no re-render
+}
+
+```
+
+# 3️⃣ Previous value store karne ke liye
+
+```js
+const prevCount = useRef();
+
+useEffect(() => {
+  prevCount.current = count;
+}, [count]);
+
+```

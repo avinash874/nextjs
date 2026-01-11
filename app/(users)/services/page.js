@@ -4,6 +4,8 @@ import Image from "next/image";
 import style from "./service.module.css";
 // import thapa from "/public/thapa.jpg"
 import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 
 // export const metadata = {
@@ -19,6 +21,70 @@ const cartVarient = {
 };
 
 const page = () => {
+  const cardRef = useRef(); // Example ref usage
+   const hoverTween = useRef(null); // To store the hover animation tween
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const element = cardRef.current;
+
+      if (!element) return;
+
+      //set
+      gsap.set(element, {
+        opacity: 0,
+        y: 50,
+        scale: 1,
+      })
+      //to
+      gsap.to(element, {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.inOut",
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (!cardRef.current) return;
+
+    if (hoverTween.current) {
+      hoverTween.current.kill();
+    }
+
+    hoverTween.current = gsap.to(cardRef.current, {
+      duration: 0.3,
+      y: -50,
+      scale: 1.05,
+      boxShadow:
+        "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    if (!cardRef.current) return;
+
+    // Kill any existing hover animation
+    if (hoverTween.current) {
+      hoverTween.current.kill();
+    }
+
+    hoverTween.current = gsap.to(cardRef.current, {
+      duration: 0.3,
+      y: 0,
+      scale: 1,
+      boxShadow:
+        "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      ease: "power2.in",
+    });
+  };
+
+
+
   return (
     <>
       <section className="font-roboto">
@@ -81,7 +147,11 @@ const page = () => {
             </motion.div>
 
             {/* <--- Team member3 */}
-            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+            <div 
+            ref={cardRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave} 
+            className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-purple-600">MJ</span>
               </div>
