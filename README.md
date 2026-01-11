@@ -410,7 +410,6 @@ During next build, generateStaticParams runs before the corresponding Layouts or
 
 * Add 'use server' at the top of an async function body to mark the function as callable by the client. We call these functions Server Functions.
 
-```js
 <async function addToCart(data) {
   'use server';
   // ...
@@ -426,32 +425,27 @@ During next build, generateStaticParams runs before the corresponding Layouts or
 
 * client component me meta data ko nhi likh sakte
 
-```js
- const contactAction = (formData) => {
-     const {fullName, email, message} = Object. fromEntries(formData.entries());
-     console.log(fullName, email, message);
- }; 
+ *const contactAction = (formData) => {
+  *   const {fullName, email, message} = Object. fromEntries(formData.entries());
+  *   console.log(fullName, email, message);
+* }; 
 
 # useActionState🔥Show Loading + Handle Form Response Easily in Next.js
 
 useActionState is a Hook that allows you to update state based on the result of a form action.
 
-```js
-const [state,formAction, isPending] = useActionState(fn,initialState, permalink?);
+<const [state,formAction, isPending] = useActionState(fn,initialState, permalink?);>
 
+* In earlier React Canary versions, this API was part of React DOM and called useFormState.
 
- In earlier React Canary versions, this API was part of React DOM and called useFormState.
-
- Reference 
+* Reference 
 <useActionState(action, initialState, permalink?)>
 
 # React DOM useFormStatus Hook🔥Show Loading State on Submit Button 
 * useFormStatus hook from React DOM, built specifically for forms using Server Actions in Next.js 14. You’ll learn how to control form buttons during submission, show real-time loading states, and improve your form UX instantly.
 
 * useFormStatus is a Hook that gives you status information of the last form submission.
-
-```js
- const { pending, data, method, action } = useFormStatus();
+ * const { pending, data, method, action } = useFormStatus();
 
  * useFormStatus does not take any parameters.
 
@@ -547,12 +541,11 @@ If you want to access the router object inside any function component in your ap
 
 * if we get the dada from form then use: Obeject.formentries(formData);
 
-```txt
- Want	               Use
- Server redirect	   redirect() in Server Action
- Client redirect	  router.push()
- Form with loader	  useFormState()
- Client submit	      useTransition()
+* * Want	               Use
+* Server redirect	   redirect() in Server Action
+* Client redirect	  router.push()
+* Form with loader	  useFormState()
+* Client submit	      useTransition()
 
 # 41.revalidatePath in Next.js (App Router)
 
@@ -632,4 +625,9 @@ for client side
 "use client";
 import { useRouter } from "next/navigation";
 
-
+```txt
+app/
+ ├─ page.jsx
+ ├─ layout.jsx
+ └─ contact/
+     └─ page.jsx
