@@ -196,7 +196,8 @@ For example:
 * Install mysql2 in terminal: npm i mysql2
 
 * work on workbench: data should like that:
-  <!-- working schema -->
+  # working schema
+  ```js
   * create database hospital_db;
    * use hospital_db;
 
@@ -220,9 +221,12 @@ For example:
 
 * select * from doctors
 
+```
+
 * make file db.js inside config and also make file static
 
 # db.js
+
 ```js
  import mysql from "mysql2/promise";
 
@@ -265,9 +269,11 @@ For example:
  );
  }>
 
+ export default StaticPage
+
 ```
 
-* export default StaticPage
+]
 
 
 # Static Route (Default Behavior)
@@ -290,8 +296,10 @@ For example:
 • Or when you manually mark a page as dynamic:
 export const dynamic = force-dynamic';
 
+```js
 * ○  (Static)   prerendered as static content
 * ƒ  (Dynamic)  server-rendered on demand
+```
 
 * for produvtion
  ```js
@@ -369,11 +377,12 @@ React Cache:
 
 # 🔹 React Cache + Database Example (Real use case)
 
-* import { cache } from "react";
-* import db from "@/lib/db";
-* export const getUserById = cache(async (id: string) => {
- *  return db.user.findUnique({ where: { id } });
-* });
+```js
+ import { cache } from "react";
+ import db from "@/lib/db"; export const getUserById = cache(async (id: string) => {
+   return db.user.findUnique({ where: { id } });
+ });
+```
 
 # Custom Errors
 # Fix 404 Route Errors with notFound() in Next.js
@@ -637,4 +646,17 @@ for client side
 ```js
 "use client";
 import { useRouter } from "next/navigation";
+```
+
+#  On-Demand Revalidation
+
+* On client side use this and whwn we use server side then use revalidatePath()
+
+On-demand revalidation in Next.js 15 is a powerful caching feature that allows you to manually clear and refresh cached data or pages in response to specific events, rather than waiting for automatic time-based revalidation. This gives you precise control over when your application's cache is updated, ensuring users see fresh content immediately when changes occur.
+
+```js
+export async function createPost(){
+  //post route cache
+  revalidatePath('/posts')
+}
 ```
