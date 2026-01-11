@@ -1,12 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import style from "./service.module.css";
 // import thapa from "/public/thapa.jpg"
+import { motion } from "motion/react";
 
-export const metadata = {
-  title: "Services Page",
-  description: "This is services page description",
-  authors:[{ name: "Avinash Singh" }, { name: "thapa technichal"}, { url: "thapatechnichal.com"}],
-  keywords: ["nextjs","reactjs","fullstack"]
+
+// export const metadata = {
+//   title: "Services Page",
+//   description: "This is services page description",
+//   authors:[{ name: "Avinash Singh" }, { name: "thapa technichal"}, { url: "thapatechnichal.com"}],
+//   keywords: ["nextjs","reactjs","fullstack"]
+// };
+
+const cartVarient = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
 };
 
 const page = () => {
@@ -19,40 +28,57 @@ const page = () => {
           <div className="grid grid-cols-3 gap-8">
 
             {/* <--- Team member1 */}
-            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 1 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.2, ease: "easeInOut", scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.3 }}
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 {/* <span className="text-2xl font-bold text-purple-600">AS</span> */}
-                <Image 
-                src="/thapa.jpg" 
-                width={500} 
-                height={500} 
-                alt="thapa pic"
-                className="w-full h-full rounded-full"
+                <Image
+                  src="/thapa.jpg"
+                  width={500}
+                  height={500}
+                  alt="thapa pic"
+                  className="w-full h-full rounded-full"
                 />
-              </div>
-              <h3 className="text-lg font-semibold text-center text-gray-800">Avinash Technical</h3>
+              </motion.div>
+              <motion.h3
+                variants={cartVarient}
+                initial="hidden"
+                animate="show"
+                transition={{ ease: "easeInOut", delay: 0.8 }}
+                className="text-lg font-semibold text-center text-gray-800">Avinash Technical</motion.h3>
               <p className="text-sm text-gray-600 text-center mt-2">Frontend Developer</p>
               <p className="text-xs text-gray-500 text-center mt-1">React &$ Developer</p>
-            </div>
+            </motion.div>
 
             {/* <--- Team member2 */}
-            <div className="bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+            <motion.div
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 2, ease: "easeInOut" }} className="bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
               <div className="w-full h-full relative bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 {/* <span className="text-2xl font-bold text-purple-600">MJ</span> */}
-                <Image 
-                src="/thapa.jpg" 
-                alt="thapa tech"
-                fill={true} 
-                quality={100} 
-                priority={false} 
-                placeholder="blur" 
-                blurDataURL="." 
+                <Image
+                  src="/thapa.jpg"
+                  alt="thapa tech"
+                  fill={true}
+                  quality={100}
+                  priority={false}
+                  placeholder="blur"
+                  blurDataURL="."
                 />
               </div>
               {/* <h3 className="text-lg font-semibold text-center text-gray-800">Mike Johnson</h3> */}
               {/* <p className="text-sm text-gray-600 text-center mt-2">Backend Developer</p> */}
               {/* <p className="text-xs text-gray-500 text-center mt-1">Node.js &</p> */}
-            </div>
+            </motion.div>
 
             {/* <--- Team member3 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-2 transition-all duration-300">

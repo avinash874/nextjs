@@ -208,15 +208,17 @@ For example:
     * phone VARCHAR(15),
     * experience INT
 * );
+```
 
-* INSERT INTO doctors (name, specialization, phone, experience) VALUES 
-* ('Dr. Amit Kumar', 'Cardiologist', '9001112201', 10),
-* ('Dr. Neha Jain', 'Dermatologist', '9001112202', 7),
-* ('Dr. Suresh Rao', 'Orthopedic', '9001112203', 12),
-* ('Dr. Rahul Mehta', 'Neurologist', '9001112204', 15),
-* ('Dr. Pooja Sharma', 'Gynecologist', '9001112205', 9),
-* ('Dr. Anil Verma', 'General Physician', '9001112206', 8),
-* ('Dr. Kavita Singh', 'Pediatrician', '9001112207', 6),
+```js
+ INSERT INTO doctors (name, specialization, phone, experience) VALUES 
+ ('Dr. Amit Kumar', 'Cardiologist', '9001112201', 10),
+ ('Dr. Neha Jain', 'Dermatologist', '9001112202', 7),
+ ('Dr. Suresh Rao', 'Orthopedic', '9001112203', 12),
+ ('Dr. Rahul Mehta', 'Neurologist', '9001112204', 15),
+ ('Dr. Pooja Sharma', 'Gynecologist', '9001112205', 9),
+ ('Dr. Anil Verma', 'General Physician', '9001112206', 8),
+ ('Dr. Kavita Singh', 'Pediatrician', '9001112207', 6),
 
 
 * select * from doctors
@@ -660,3 +662,17 @@ export async function createPost(){
   revalidatePath('/posts')
 }
 ```
+
+# Framer Motion: Get started with Motion for React
+
+* Framer Motion is a powerful animation library for React that makes it easy to create smooth, modern UI animations.
+
+Used by:
+    * Startups
+    * SaaS dashboards
+    * Landing pages
+    * Portfolio websites
+    
+```js
+ npm install motion   
+ ```
