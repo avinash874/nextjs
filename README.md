@@ -222,44 +222,50 @@ For example:
 
 * make file db.js inside config and also make file static
 
-<!-- db.js -->
-* import mysql from "mysql2/promise";
+# db.js
+```js
+ import mysql from "mysql2/promise";
 
-* <export const db = mysql.createPool({
-  *   host: "localhost",
-  *   user: "root",
-  *   password: "Avinash#2004",
-  *   database: "hospital_db",
+ <export const db = mysql.createPool({
+     host: "localhost",
+     user: "root",
+     password: "Avinash#2004",
+     database: "hospital_db",
 * });
 
-* try {
-* const connection = await db.getConnection();
-* console.log("Database connection * successfully.")
-* connection.release();
-* } catch(err){
- *    console.error("Database connection * failed:", err);
- *    process.exist(1);
-* }>
+ try {
+ const connection = await db.getConnection();
+ console.log("Database connection * successfully.")
+ connection.release();
+ } catch(err){
+     console.error("Database connection * failed:", err);
+     process.exist(1);
+ }>
 
-<!-- static/page.jsx -->
+```
 
-* import React from 'react'
-* import {db} from "../../../consfig/db"
+# static/page.jsx
 
-* <<const StaticPage = async () => {
-  *   const [doctors] = await db.execute* ("select * from doctors");
-  *   console.log(doctors);
+```js
+ import React from 'react'
+ import {db} from "../../../consfig/db"
 
-  * return (
-  * <>
-  *   <ul>
-   *    {doctors.map((doctor) => (
-   *      <li key={doctor.doctor_id}>{doctor.* name}</li>
-   *    ))}
-   *  </ul>
- *  </>
-* );
-* }>
+ <<const StaticPage = async () => {
+     const [doctors] = await db.execute* ("select * from doctors");
+     console.log(doctors);
+
+   return (
+   <>
+     <ul>
+       {doctors.map((doctor) => (
+         <li key={doctor.doctor_id}>{doctor.* name}</li>
+       ))}
+     </ul>
+   </>
+ );
+ }>
+
+```
 
 * export default StaticPage
 
@@ -288,8 +294,10 @@ export const dynamic = force-dynamic';
 * ƒ  (Dynamic)  server-rendered on demand
 
 * for produvtion
-* npm run build
-* npm run start
+ ```js
+npm run build
+ npm run start
+ ```
 
 # ISR ka need tab aaya jab data delete karne pr dynamic me delete ho jata tha but in static not delete
 
@@ -410,10 +418,12 @@ During next build, generateStaticParams runs before the corresponding Layouts or
 
 * Add 'use server' at the top of an async function body to mark the function as callable by the client. We call these functions Server Functions.
 
-<async function addToCart(data) {
+```js
+async function addToCart(data) {
   'use server';
   // ...
-} >
+} 
+```
 
  Usage
 * Server Functions in forms
@@ -425,21 +435,23 @@ During next build, generateStaticParams runs before the corresponding Layouts or
 
 * client component me meta data ko nhi likh sakte
 
- *const contactAction = (formData) => {
-  *   const {fullName, email, message} = Object. fromEntries(formData.entries());
-  *   console.log(fullName, email, message);
-* }; 
+ 
+ const contactAction = (formData) => {
+     const {fullName, email, message} = Object. fromEntries(formData.entries());
+     console.log(fullName, email, message);
+};  
+
 
 # useActionState🔥Show Loading + Handle Form Response Easily in Next.js
 
 useActionState is a Hook that allows you to update state based on the result of a form action.
 
-<const [state,formAction, isPending] = useActionState(fn,initialState, permalink?);>
+```const [state,formAction, isPending] = useActionState(fn,initialState, permalink?);```
 
 * In earlier React Canary versions, this API was part of React DOM and called useFormState.
 
 * Reference 
-<useActionState(action, initialState, permalink?)>
+```useActionState(action, initialState, permalink?)```
 
 # React DOM useFormStatus Hook🔥Show Loading State on Submit Button 
 * useFormStatus hook from React DOM, built specifically for forms using Server Actions in Next.js 14. You’ll learn how to control form buttons during submission, show real-time loading states, and improve your form UX instantly.
@@ -514,20 +526,20 @@ If you want to access the router object inside any function component in your ap
 
  # 🔙 Go Back Button in Next.js using useRouter
 
-<!-- // Import useRouter for navigation  -->
- * import { useRouter } from "next/navigation"; 
- <!-- // Initialize the router -->
- * const router = useRouter(); 
- <!-- // Navigate back to the previous page
- -->
-* onClick={() => router.back()}  
+  * Import useRouter for navigation 
+ * ```import { useRouter } from "next/navigation"; ```
+*  Initialize the router*
+ * c```onst router = useRouter(); ```
+ * Navigate back to the previous page
+* ```onClick={() => router.back()}  ```
 
 # 40.Handling Server Actions in Next.js with useTransition
 
 * useTransition is a React Hook that lets you render a part of the UI in the background.
-
+```js
 * import { useTransition } from 'react';
 * const [isPending, startTransition] = useTransition()
+```
 
 * "The code inside here is not urgent-do it in the background if needed,so the UI stay responsive."
 * useTransition does not take any parameters.
@@ -583,13 +595,13 @@ Where can you use it?
 * Route Handlers: Marks the path for revalidation. The revalidation is done on the next visit to the specified path. This means calling revalidatePath with a dynamic route segment will not immediately trigger many revalidations at once. The invalidation only happens when the path is next visited.
  
  //////////////////////
- 
-* await db.execute(
+ ```js
+ await db.execute(
   `INSERT INTO hospital (name, city, state, department, established_year)
    VALUES (?, ?, ?, ?, ?)`,
   [name, city, state, department, established_year]
 );
-
+```
 * [name, city, state, department, established_year]
 
  * Above line statement we use (?,?,?,?) means
@@ -618,6 +630,7 @@ for client side
     * router.refresh();
 
 for client side
+
   * import { revalidatePath } from "next/cache";
    * revalidatePath("/hospitals");    
 
