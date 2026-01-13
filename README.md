@@ -940,6 +940,7 @@ VALUES
 
 select * from hospital;
 table hospital;
-
-
 ```
+
+# Modal in Next.js & React🔥Create a Dialog Component with Shadcn UI
+
