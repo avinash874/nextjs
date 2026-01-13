@@ -804,11 +804,11 @@ Step 1 — Install Tailwind (if not installed)
 npx create-next-app@latest my-app --tailwind
 cd my-app
 ```
-# Step 2 — Initialize shadcn
+Step 2 — Initialize shadcn
 ```js
 npx shadcn@latest init
 ```
-# Step 3 — Add components
+Step 3 — Add components
 ```js
 npx shadcn@latest add button
 npx shadcn@latest add card
@@ -824,21 +824,122 @@ import { Button } from "@/components/ui/button";
 
 ```
 
+# this is the quary of sql on mysql workbench
+```js
+create database hospital_db;
+use hospital_db;
+
+
+CREATE TABLE doctors (
+    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    specialization VARCHAR(100) NOT NULL,
+    experience_years INT CHECK (experience_years >= 0),
+    license_number VARCHAR(50) UNIQUE NOT NULL,
+    joining_date DATE NOT NULL,
+    date_of_birth DATE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    address TEXT,
+    city VARCHAR(50),
+    state VARCHAR(50),
+    postal_code VARCHAR(10),
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO doctors (
+    doctor_id, first_name, last_name, gender, specialization, experience_years,
+    license_number, joining_date, date_of_birth,
+    email, phone, address, city, state, postal_code
+) VALUES
+(1,'Rahul','Sharma','Male','Cardiologist',10,'LIC1001','2018-06-15','1985-03-22','rahul.sharma1@gmail.com','9000000001','Street 1','Delhi','Delhi','110001'),
+(2,'Anita','Verma','Female','Dermatologist',7,'LIC1002','2020-01-10','1990-07-12','anita.verma@gmail.com','9000000002','Street 2','Mumbai','Maharashtra','400001'),
+(3,'Amit','Kumar','Male','Neurologist',12,'LIC1003','2016-03-20','1983-01-10','amit.kumar@gmail.com','9000000003','Street 3','Patna','Bihar','800001'),
+(4,'Priya','Singh','Female','Gynecologist',9,'LIC1004','2019-09-05','1988-11-25','priya.singh@gmail.com','9000000004','Street 4','Lucknow','UP','226001'),
+(5,'Suresh','Mehta','Male','Orthopedic',15,'LIC1005','2014-02-18','1979-05-30','suresh.mehta@gmail.com','9000000005','Street 5','Ahmedabad','Gujarat','380001'),
+(6,'Neha','Gupta','Female','Pediatrician',6,'LIC1006','2021-04-01','1992-08-14','neha.gupta@gmail.com','9000000006','Street 6','Jaipur','Rajasthan','302001'),
+(7,'Vikas','Yadav','Male','ENT',8,'LIC1007','2019-01-12','1989-12-09','vikas.yadav@gmail.com','9000000007','Street 7','Gurgaon','Haryana','122001'),
+(8,'Pooja','Malhotra','Female','Psychiatrist',11,'LIC1008','2017-07-21','1986-04-03','pooja.malhotra@gmail.com','9000000008','Street 8','Chandigarh','Chandigarh','160001'),
+(9,'Rohit','Bansal','Male','General Physician',5,'LIC1009','2022-06-10','1994-02-18','rohit.bansal@gmail.com','9000000009','Street 9','Indore','MP','452001'),
+(10,'Sneha','Iyer','Female','Endocrinologist',13,'LIC1010','2015-08-19','1982-06-06','sneha.iyer@gmail.com','9000000010','Street 10','Chennai','Tamil Nadu','600001'),
+
+(11,'Arjun','Patel','Male','Urologist',14,'LIC1011','2014-11-03','1981-09-12','arjun.patel@gmail.com','9000000011','Street 11','Surat','Gujarat','395003'),
+(12,'Kavita','Joshi','Female','Radiologist',9,'LIC1012','2018-02-26','1989-10-15','kavita.joshi@gmail.com','9000000012','Street 12','Pune','Maharashtra','411001'),
+(13,'Manish','Agarwal','Male','Oncologist',16,'LIC1013','2013-05-14','1978-12-02','manish.agarwal@gmail.com','9000000013','Street 13','Noida','UP','201301'),
+(14,'Ritu','Kapoor','Female','Pathologist',7,'LIC1014','2020-03-08','1991-01-29','ritu.kapoor@gmail.com','9000000014','Street 14','Amritsar','Punjab','143001'),
+(15,'Deepak','Chauhan','Male','Nephrologist',11,'LIC1015','2017-09-30','1986-07-17','deepak.chauhan@gmail.com','9000000015','Street 15','Dehradun','Uttarakhand','248001'),
+
+(16,'Sunita','Rao','Female','Anesthesiologist',18,'LIC1016','2012-01-05','1976-05-21','sunita.rao@gmail.com','9000000016','Street 16','Bangalore','Karnataka','560001'),
+(17,'Kunal','Malik','Male','Pulmonologist',10,'LIC1017','2018-04-18','1985-11-11','kunal.malik@gmail.com','9000000017','Street 17','Faridabad','Haryana','121001'),
+(18,'Ayesha','Khan','Female','Ophthalmologist',8,'LIC1018','2019-10-01','1990-03-09','ayesha.khan@gmail.com','9000000018','Street 18','Bhopal','MP','462001'),
+(19,'Nitin','Saxena','Male','Gastroenterologist',14,'LIC1019','2015-06-06','1981-08-27','nitin.saxena@gmail.com','9000000019','Street 19','Kanpur','UP','208001'),
+(20,'Meenal','Arora','Female','Nutritionist',6,'LIC1020','2021-07-14','1993-02-04','meenal.arora@gmail.com','9000000020','Street 20','Panipat','Haryana','132103'),
+
+(21,'Harsh','Jain','Male','Dentist',4,'LIC1021','2023-01-10','1996-06-19','harsh.jain@gmail.com','9000000021','Street 21','Udaipur','Rajasthan','313001'),
+(22,'Shalini','Mishra','Female','Physiotherapist',7,'LIC1022','2020-09-09','1991-12-12','shalini.mishra@gmail.com','9000000022','Street 22','Gwalior','MP','474001'),
+(23,'Akash','Roy','Male','Neurosurgeon',17,'LIC1023','2012-12-20','1977-04-28','akash.roy@gmail.com','9000000023','Street 23','Kolkata','WB','700001'),
+(24,'Divya','Nair','Female','Ayurvedic',9,'LIC1024','2018-05-16','1988-10-08','divya.nair@gmail.com','9000000024','Street 24','Kochi','Kerala','682001'),
+(25,'Pranav','Kulkarni','Male','Homeopathy',5,'LIC1025','2022-03-03','1994-09-23','pranav.k@gmail.com','9000000025','Street 25','Nashik','Maharashtra','422001'),
+
+(26,'Ishita','Sen','Female','Psychologist',8,'LIC1026','2019-08-22','1990-01-14','ishita.sen@gmail.com','9000000026','Street 26','Siliguri','WB','734001'),
+(27,'Varun','Khanna','Male','Orthopedic',12,'LIC1027','2016-10-11','1983-03-05','varun.khanna@gmail.com','9000000027','Street 27','Ludhiana','Punjab','141001'),
+(28,'Rina','Paul','Female','General Physician',10,'LIC1028','2017-04-07','1986-07-30','rina.paul@gmail.com','9000000028','Street 28','Howrah','WB','711101'),
+(29,'Sanjay','Tripathi','Male','Cardiologist',18,'LIC1029','2011-02-02','1975-11-09','sanjay.tripathi@gmail.com','9000000029','Street 29','Prayagraj','UP','211001'),
+(30,'Nandita','Bose','Female','Oncologist',13,'LIC1030','2015-12-12','1982-02-17','nandita.bose@gmail.com','9000000030','Street 30','Durgapur','WB','713201');
 
 
 
+DROP TABLE IF EXISTS doctors;
+TRUNCATE TABLE doctors;
+DELETE FROM doctors;
+DROP DATABASE hospital_db;
+
+SELECT * FROM doctors;
+SHOW TABLES;
+
+-- create a contact_form table for storing contact form submission.
+
+CREATE TABLE contact_form (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+full_name VARCHAR(100) NOT NULL, 
+email VARCHAR(150) NOT NULL, 
+message TEXT NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+select * from contact_form;
+
+CREATE TABLE hospital(
+   hospital_id INT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(100) NOT NULL,
+   city VARCHAR(50) NOT NULL,
+   state VARCHAR(50) NOT NULL,
+   department VARCHAR(50) NOT NULL,
+   established_year YEAR  NOT NULL
+);
+
+INSERT INTO hospital (name, city, state, department, established_year) 
+VALUES
+('apollo hospitals','Chennai','Tamil Nadu','Cardiology',1983);
+INSERT INTO hospital (name, city, state, department, established_year) 
+VALUES
+('Rajendra hospital','Chennai','Tamil Nadu','Cardiology',1983);
+INSERT INTO hospital (name, city, state, department, established_year) 
+VALUES
+('Sharma hospitals','Chennai','Tamil Nadu','Cardiology',1983);
+INSERT INTO hospital (name, city, state, department, established_year) 
+VALUES
+('Muskan hospitals','varansi','Uttar Pradesh','Physiology',1983);
 
 
+select * from hospital;
+table hospital;
 
 
-
-
-
-
-
-
-
-
-
-
-# Modal in Next.js & React🔥Create a Dialog Component with Shadcn UI
+```
