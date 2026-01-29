@@ -1,4 +1,5 @@
 import DialogDemo from "@/components/DialogDemo.jsx";
+import {DrawerDemo }from "@/components/DrawerDemo.jsx";
 const Hero = () => {
     return (
         <>
@@ -16,6 +17,12 @@ const Hero = () => {
            </h3>
             <section className="font-roboto">
                 <DialogDemo />
+            </section>
+           <h3>
+            this is DrawerDemo by using shadcn ui
+           </h3>
+            <section className="font-roboto">
+                <DrawerDemo />
             </section>
         </>
     )

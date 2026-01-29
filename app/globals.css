@@ -16,13 +16,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0b0a0a;
     --foreground: #ededed;
   }
 }
 
 body {
-  background: rgb(14, 14, 14);
+  background: rgb(12, 12, 12);
   color: var(--foreground);
   font-family: Urbanist, Helvetica, sans-serif;
   letter-spacing: 0.1rem;

@@ -1006,3 +1006,32 @@ A Dialog is a centered modal window that overlays the entire screen and requires
 ```fs
 npx shadcn@latest add dialog
 ```
+
+# Drawer in Next.js 🔥 Shadcn UI Drawer 
+“A Drawer is a non-blocking overlay panel that slides in from the edge of the screen, typically used for navigation, filters, or contextual content, especially on mobile devices.”
+
+* Perfect for mobile menus, filters, carts, or side forms.
+
+* Shadcn’s Drawer is powered by Vaul (like a bottom sheet / slide panel).
+
+# Installation
+```fs
+npx shadcn@latest add drawer
+```
+
+# 🔥 Common Use Cases
+
+* ✅ Mobile navigation
+* ✅ Filter sidebar
+* ✅ Cart panel
+* ✅ Settings panel
+* ✅ Profile menu
+* ✅ Bottom sheets
+
+# ⚠️ Common mistakes
+
+* ❌ Forget "use client"
+* ❌ Using Dialog instead of Drawer
+* ❌ Putting Drawer in Server Component
+* ❌ Not using DrawerTrigger asChild
+
