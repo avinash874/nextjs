@@ -20,7 +20,7 @@ const cartVarient = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
 };
 
-const page = () => {
+const server = () => {
   const cardRef = useRef(); // Example ref usage
    const hoverTween = useRef(null); // To store the hover animation tween
 
@@ -202,4 +202,4 @@ const page = () => {
   )
 }
 
-export default page
+export default server

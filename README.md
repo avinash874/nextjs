@@ -826,6 +826,7 @@ import { Button } from "@/components/ui/button";
 
 # this is the quary of sql on mysql workbench
 ```js
+
 create database hospital_db;
 use hospital_db;
 
@@ -944,3 +945,64 @@ table hospital;
 
 # Modal in Next.js & React🔥Create a Dialog Component with Shadcn UI
 
+ # GSAP animations in Next.js with React hooks! 🚀 
+
+ 
+* GSAP works only in client components, so in Next.js, make sure to add "usr client" at the very top of your file.
+
+
+
+
+# Modal in Next.js & React🔥Create a Dialog Component with Shadcn UI
+
+* Shadcn UI is a modern UI component system for Next.js + React + Tailwind CSS that gives you copy-paste, fully customizable components instead of a locked component library.
+
+# It’s built on top of:
+
+* ⚙️ Radix UI → accessibility & behavior
+* 🎨 Tailwind CSS → styling
+* 🧩 Class Variance Authority (CVA) → variants
+* 🧠 React + TypeScript → logic
+
+# 🔹 What makes Shadcn UI different?
+
+Unlike MUI or AntD, Shadcn UI:
+* ✅ You own the code
+* ✅ No heavy package bundle
+* ✅ Fully customizable
+* ✅ Accessible by default
+* ✅ Perfect for Next.js (App Router)
+* ✅ Tailwind-first design
+
+* 🔹 Components Shadcn Provides
+
+Button,Dialog,Sheet,Alert Dialog,Dropdown Menu,Tooltip,Popover,Tabs,Accordion,Toast (Sonner),Form,Table,Input,Select,Calendar,Card
+
+# 🎯 Dialog
+
+A Dialog is a centered modal window that overlays the entire screen and requires the user’s immediate attention before they can continue interacting with the main interface.
+
+* Definition: A centered modal window that overlays the entire screen and demands the user's attention.
+
+# 💡 Common Use Cases
+
+* ✅ Confirmation prompts — “Are you sure?”
+* 📝 Forms — login, signup, feedback
+* ⚠️ Important alerts — errors, warnings, critical info
+* 🖼️ Content previews — images, videos, details
+* 🧭 Onboarding steps — guided user flows
+
+
+# 🎯 UX Characteristics
+
+* 🔒 Interruptive — forces the user to focus on the dialog
+* 🚫 Blocks background interaction
+* 🎯 Designed for important, focused tasks
+* ⌨️ Supports keyboard actions (ESC to close, tab navigation)
+* 🧠 Encourages a clear decision (Confirm / Cancel)
+
+# installation
+
+```fs
+npx shadcn@latest add dialog
+```

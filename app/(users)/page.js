@@ -1,3 +1,4 @@
+import DialogDemo from "@/components/DialogDemo.jsx";
 const Hero = () => {
     return (
         <>
@@ -9,6 +10,13 @@ const Hero = () => {
             >
                 Click Me
             </button>
+             {/* dialog demo by using shadcn ui  */}
+           <h3>
+            this is dialog demo by using shadcn ui
+           </h3>
+            <section className="font-roboto">
+                <DialogDemo />
+            </section>
         </>
     )
 }
