@@ -1064,3 +1064,11 @@ plugins={[
           loop: true,
           }}
  ```
+
+# Create Side Navbar in Next.js using shadcn Sheet 🚀
+
+ Extends the Dialog component to display content that complements the main content of the screen.
+
+ ```fs
+ npx shadcn@latest add sheet
+ ```

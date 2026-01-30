@@ -1,6 +1,7 @@
 import { CarouselDemo } from "@/components/CarouselDemo";
 import DialogDemo from "@/components/DialogDemo.jsx";
 import {DrawerDemo }from "@/components/DrawerDemo.jsx";
+import { SheetDemo } from "@/components/SheetDemo.jsx";
 const Hero = () => {
     return (
         <>
@@ -30,6 +31,12 @@ const Hero = () => {
            </h3>
             <section className="font-roboto">
                 <CarouselDemo />
+            </section>
+           <h3>
+            this is SheetDemmo by using shadcn ui
+           </h3>
+            <section className="font-roboto">
+                <SheetDemo />
             </section>
         </>
     )
