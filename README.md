@@ -1035,3 +1035,32 @@ npx shadcn@latest add drawer
 * ❌ Putting Drawer in Server Component
 * ❌ Not using DrawerTrigger asChild
 
+# Carousel in Next.js 🔥 Build Responsive Image Slider with Shadcn UI
+
+Shadcn’s Carousel is built on Embla Carousel, so it’s smooth, touch-friendly, and works great with Tailwind.
+
+```fs
+npx shadcn-ui@latest add carousel
+```
+* (Installs embla-carousel-react and creates components/ui/carousel.tsx)
+
+* Optional for autoplay:
+```fs
+npm install embla-carousel-autoplay
+```
+```fs
+plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+
+ ```
+ You can pass options to the carousel using the opts prop. See the Embla Carousel docs for more information.
+
+ ```fs
+        opts={{              // Carousel options
+           align: "start",
+          loop: true,
+          }}
+ ```

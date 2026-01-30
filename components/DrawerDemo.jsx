@@ -1,3 +1,21 @@
+//? Definition: A panel that slides in from the side, top, or bottom of the screen, usually without covering the entire viewport.
+
+//? Common Use Cases:
+
+// Navigation menus (sidebars on mobile)
+// Settings panels (without leaving the current page)
+// Cart preview in e-commerce sites
+// Filiers on search or product pages
+// Quick info panels (e.g., profile preview)
+
+//? UX Characteristics:
+
+// Feels less interruptive than a modal.
+// Keeps context visible (you can still see most of the page behind it).
+// Great for tasks where the user might need to refer back to the page content while i
+// the panel.
+
+
 "use client"
 
 import * as React from "react"
