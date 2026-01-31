@@ -1072,3 +1072,29 @@ plugins={[
  ```fs
  npx shadcn@latest add sheet
  ```
+
+
+ # Dark & Light Mode Toggle in Next.js with Next-Themes & Shadcn UI
+
+ Adding dark mode to your next app.
+
+* Install next-themes
+Start by installing next-themes:
+```fs
+npm install next-themes
+```
+* Create a theme provider
+```fs
+"use client"
+
+import * as React from "react"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+
+export function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}
+```
+

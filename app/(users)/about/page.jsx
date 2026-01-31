@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ModeToggle"
 import Link from "next/link"
 
 const About = () => {
@@ -7,6 +8,12 @@ const About = () => {
       <button>
         <Link href="/">Home Page</Link>
       </button>
+      <section className="grid place-item-center">
+        <section>
+          <ModeToggle />
+        </section>
+       
+      </section>
     </>
   )
 }

@@ -1,6 +1,8 @@
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import { Work_Sans } from "next/font/google";
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: {
@@ -52,7 +54,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${workSans.variable} `}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         {children}
+        <Toaster richColors position="top-right" />
+        </ThemeProvider>
       </body>
     </html>
   );
